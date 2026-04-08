@@ -239,21 +239,25 @@
 
         /* Video section - autoplay, no controls */
         .video-section {
-            margin: 2rem 0 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(0,174,239,0.3);
-            transition: 0.3s;
+    margin: 2rem 0 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,174,239,0.3);
+    transition: 0.3s;
+    aspect-ratio: 16 / 9;  /* forces a visible box */
+    background: #000;      /* fallback while loading */
+        }
         }
         .video-section:hover {
             border-color: #00AEEF;
             box-shadow: 0 0 25px rgba(0,174,239,0.2);
         }
         .mystic-video {
-            width: 100%;
-            display: block;
-            border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* ensures video fills the box nicely */
+    display: block;
         }
 
         /* Tokenomics grid */
@@ -518,13 +522,13 @@
         </div>
     </section>
 
-    <!-- Video Section (autoplay, no controls, loop) -->
-    <div class="video-section fade-up">
-        <video class="mystic-video" autoplay muted loop playsinline disablePictureInPicture>
-            <source src="shaman.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <!-- Video Section - Fixed: visible, autoplay, no controls -->
+<div class="video-section fade-up">
+    <video class="mystic-video" autoplay muted loop playsinline preload="auto">
+        <source src="shaman.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
     <!-- About: Origin of the King (Full Text) -->
     <section class="fade-up">
@@ -776,6 +780,14 @@
     if (video) {
         video.play().catch(e => console.log("Autoplay prevented:", e));
     }
+    const video = document.querySelector('.mystic-video');
+if (video) {
+    video.play().catch(e => {
+        console.log("Autoplay failed, trying muted play", e);
+        video.muted = true;
+        video.play();
+    });
+}
 </script>
 </body>
 </html>
