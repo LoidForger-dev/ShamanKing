@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="ShamanKing — the ascension of the ancient token. A covenant bridging mortal realm and spirit world. Zero taxes, fair launch, community-driven.">
+    <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, zero tax, spirit token, ascension, DeFi, shaman">
+    <meta name="author" content="ShamanKing Tribe">
+    <title>ShamanKing | Ascension of the Ancient Token</title>
+    <!-- Google Fonts: Orbitron + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #05070D;
+            color: #E6F7FF;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        /* Background image with opacity */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('shamanbg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.45;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #05070D;
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Scroll animation base */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        /* Typography */
+        h1, h2, h3, .heading-font {
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #00AEEF;
+            text-shadow: 0 0 6px rgba(0,174,239,0.3);
+            border-left: 4px solid #00AEEF;
+            padding-left: 1rem;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 8px #00AEEF, 0 0 2px #4FCBFF;
+        }
+
+        /* Cards */
+        .card {
+            background: #0B0F1A;
+            border: 1px solid rgba(0,174,239,0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #00AEEF;
+            box-shadow: 0 0 20px rgba(0,174,239,0.25);
+            transform: translateY(-4px);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: #00AEEF;
+            color: #05070D;
+            font-weight: 700;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,174,239,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #4FCBFF;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0,174,239,0.5);
+        }
+
+        /* Social icon buttons (no extra links) */
+        .social-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1.5px solid #00AEEF;
+            color: #00AEEF;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            margin: 0.3rem;
+        }
+
+        .social-icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .social-icon-btn:hover {
+            background: #00AEEF;
+            color: #05070D;
+            box-shadow: 0 0 12px #00AEEF;
+            transform: translateY(-2px);
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 2rem 1rem 2rem;
+        }
+
+        /* Round logo with pulse effect */
+        .logo-wrapper {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,174,239,0.2) 0%, rgba(0,174,239,0) 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        .hero-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00AEEF;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0,174,239,0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 18px rgba(0,174,239,0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0,174,239,0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #E6F7FF, #00AEEF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: #9FB3C8;
+            max-width: 700px;
+            margin: 1rem auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Roadmap */
+        .roadmap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .phase-card {
+            background: #0B0F1A;
+            border-left: 4px solid #00AEEF;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateX(6px);
+            background: #0F1422;
+            box-shadow: 0 5px 15px rgba(0,174,239,0.2);
+        }
+
+        .phase-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: #00AEEF;
+            margin-bottom: 0.75rem;
+        }
+
+        .phase-desc {
+            color: #9FB3C8;
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+
+        .phase-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Chart widget - simple coming soon */
+        .chart-widget {
+            background: #0B0F1A;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0,174,239,0.3);
+            transition: 0.3s;
+        }
+
+        .chart-widget:hover {
+            border-color: #00AEEF;
+            box-shadow: 0 0 18px rgba(0,174,239,0.2);
+        }
+
+        .coming-soon-badge {
+            font-size: 2rem;
+            font-weight: bold;
+            background: rgba(0,174,239,0.1);
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            color: #4FCBFF;
+            letter-spacing: 3px;
+            font-family: 'Orbitron', monospace;
+        }
+
+        /* CA section - clean */
+        .ca-card {
+            text-align: center;
+            background: #0B0F1A;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid #00AEEF40;
+        }
+
+        .ca-text {
+            font-size: 1.5rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+            background: #05070D;
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            color: #00AEEF;
+            font-weight: 600;
+        }
+
+        /* Community section */
+        .community-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid rgba(0,174,239,0.2);
+            color: #9FB3C8;
+            font-size: 0.85rem;
+        }
+
+        /* Chatbot (same as before, functional) */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #00AEEF;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 20px #00AEEF;
+            z-index: 1000;
+            transition: 0.2s;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.05);
+            background: #4FCBFF;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 360px;
+            max-width: calc(100vw - 40px);
+            background: #0B0F1A;
+            border: 1px solid #00AEEF;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+
+        .chat-header {
+            background: #05070D;
+            padding: 1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: bold;
+            color: #00AEEF;
+            border-bottom: 1px solid rgba(0,174,239,0.4);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-messages {
+            height: 320px;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .bot-msg, .user-msg {
+            max-width: 85%;
+            padding: 0.6rem 1rem;
+            border-radius: 18px;
+            font-size: 0.9rem;
+        }
+
+        .bot-msg {
+            background: #05070D;
+            border-left: 3px solid #00AEEF;
+            align-self: flex-start;
+            color: #E6F7FF;
+        }
+
+        .user-msg {
+            background: #00AEEF;
+            color: #05070D;
+            align-self: flex-end;
+            font-weight: 500;
+        }
+
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid #1f2a3a;
+            padding: 0.6rem;
+            gap: 0.5rem;
+            background: #0B0F1A;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            background: #05070D;
+            border: 1px solid #00AEEF40;
+            padding: 0.6rem;
+            border-radius: 40px;
+            color: white;
+            outline: none;
+        }
+
+        .chat-input-area button {
+            background: #00AEEF;
+            border: none;
+            border-radius: 40px;
+            padding: 0 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .logo-wrapper {
+                width: 130px;
+                height: 130px;
+            }
+            .hero-logo {
+                width: 110px;
+                height: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero fade-up">
+        <div class="logo-wrapper">
+            <img src="shaman.png" alt="ShamanKing Emblem" class="hero-logo">
+        </div>
+        <h1>SHAMANKING</h1>
+        <div class="hero-tagline">“The Shaman King does not pump. He ascends.”</div>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary" id="buyComingSoonBtn">Buy Link: Coming Soon</a>
+            <!-- Dexscreener link removed from hero as requested -->
+        </div>
+    </section>
+
+    <!-- About: Origin of the King (Full Text) -->
+    <section class="fade-up">
+        <h2>⚡ THE ORIGIN OF THE KING</h2>
+        <div class="card">
+            <p style="font-size:1.05rem; margin-bottom: 1rem;">Long before blockchains were forged, the shamans whispered of a token that would bridge the mortal realm and the spirit world. A coin baptized in ritual fire, sealed with the mark of the ancient kings.</p>
+            <p style="font-size:1.05rem; margin-bottom: 1rem;"><strong>$SHAMAN</strong> is not merely currency. It is a covenant. Every holder becomes a spirit medium — a conduit for something far older than DeFi.</p>
+            <p style="font-size:1.1rem; color:#00AEEF;">The Shaman King does not pump. He ascends.</p>
+        </div>
+    </section>
+
+    <!-- Narrative: Full mystical passage -->
+    <section class="fade-up">
+        <h2>🌀 NARRATIVE — THE RITUAL</h2>
+        <div class="card">
+            <p><em>Before charts… Before noise… There was only the ritual.</em></p>
+            <p style="margin-top: 0.75rem;">In a realm beyond sight, a king did not rule—<br>he watched.<br>Waiting.<br>For those early enough to feel it.</p>
+            <p style="margin-top: 0.75rem;">The weak saw nothing.<br>The chosen felt the pull.<br>A whisper in the storm.<br>A signal in the chaos.</p>
+            <p style="margin-top: 0.75rem;"><strong>Shamanking is not a coin.</strong><br>It is an ascension.<br>A test of who enters…<br>and who hesitates.</p>
+            <p style="margin-top: 0.75rem;">Some will watch from the outside.<br>Others will step forward.<br>And a few—<br><span class="glow-text" style="font-weight:bold;">will become king</span></p>
+            <p style="margin-top: 1rem; border-top: 1px dashed #00AEEF40; padding-top: 1rem;">The gate is opening. Ascension comes</p>
+        </div>
+    </section>
+
+    <!-- Tokenomics (full details) -->
+    <section class="fade-up">
+        <h2>📜 SHAMANKING TOKENOMICS</h2>
+        <div class="tokenomics-grid">
+            <div class="card"><strong>Total Supply</strong><br>1,000,000,000 tokens</div>
+            <div class="card"><strong>Liquidity</strong><br>100% (fair launch model)<br>All tokens added to liquidity at launch for public trading</div>
+            <div class="card"><strong>Team Allocation</strong><br>None — No reserved tokens for team or insiders</div>
+            <div class="card"><strong>Taxes</strong><br>0% — No buy tax, no sell tax, no hidden fees</div>
+            <div class="card"><strong>Minting</strong><br>Not allowed — Fixed supply with no additional tokens created</div>
+        </div>
+    </section>
+
+    <!-- CA Section: Only CA text (no extra links) -->
+    <section class="fade-up">
+        <h2>🔗 CONTRACT ADDRESS</h2>
+        <div class="ca-card">
+            <div class="ca-text">CA: Coming Soon</div>
+        </div>
+    </section>
+
+    <!-- Roadmap: Exact Phases -->
+    <section class="fade-up">
+        <h2>🗺 SHAMANKING ROADMAP</h2>
+        <div class="roadmap-list">
+            <div class="phase-card">
+                <div class="phase-title">Phase 1: Awakening (Pre-Launch)</div>
+                <ul class="phase-desc">
+                    <li>Community channels are active (Telegram, X)</li>
+                    <li>Early supporters begin to gather</li>
+                    <li>Website goes live</li>
+                    <li>Build consistent engagement and awareness</li>
+                    <li>Establish the ShamanKing identity and presence</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <div class="phase-title">Phase 2: Spirit Gathering</div>
+                <ul class="phase-desc">
+                    <li>Grow the community organically</li>
+                    <li>Daily engagement and updates</li>
+                    <li>Meme creation and community-driven content</li>
+                    <li>Small events and interactions</li>
+                    <li>Begin building hype toward launch</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <div class="phase-title">Phase 3: Energy Release (Launch)</div>
+                <ul class="phase-desc">
+                    <li>Official token launch</li>
+                    <li>Liquidity added</li>
+                    <li>First wave of holders joins</li>
+                    <li>Marketing push begins</li>
+                    <li>Strong community participation</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <div class="phase-title">Phase 4: Shaman Ascension</div>
+                <ul class="phase-desc">
+                    <li>Partnerships and collaborations</li>
+                    <li>Expanded marketing campaigns</li>
+                    <li>Community events and rewards</li>
+                    <li>Listings (DEX/CEX if possible)</li>
+                    <li>Long-term growth and ecosystem expansion</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; text-align: center; font-style: italic; font-weight: 500; background: #0B0F1A; border-radius: 40px; padding: 1rem;">
+            ✨ Built by the tribe, powered by energy, driven by belief.
+        </div>
+    </section>
+
+    <!-- Live Chart Widget - only "Coming Soon" without extra details -->
+    <section class="fade-up">
+        <h2>📈 LIVE CHART — DEXSCREENER</h2>
+        <div class="chart-widget">
+            <div class="coming-soon-badge">Coming Soon</div>
+        </div>
+    </section>
+
+    <!-- Community Section: only Telegram and X with real icons (no buy/dexscreener) -->
+    <section class="fade-up">
+        <h2>👥 JOIN THE TRIBE</h2>
+        <div class="card" style="text-align: center;">
+            <p style="margin-bottom: 1.5rem;">Step into the spirit circle. Become part of the ascension.</p>
+            <div class="community-buttons">
+                <a href="https://t.me/ShamanKingCoin_Chat" target="_blank" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2 12.5l6 2 10-6-6 6 6 2-4.5 5.5"/></svg>
+                    Telegram
+                </a>
+                <a href="https://x.com/shamankingcoin?s=21" target="_blank" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 14.933L20 4"/><circle cx="8.5" cy="13.5" r="2.5"/><circle cx="15.5" cy="9.5" r="2.5"/></svg>
+                    X (Twitter)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 ShamanKing — The ascension of the ancient token. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Powered by the tribe</p>
+    </footer>
+</div>
+
+<!-- Floating Chatbot Toggle -->
+<div class="chatbot-toggle" id="chatbotToggle">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+</div>
+
+<div id="chatWindow" class="chat-window hidden">
+    <div class="chat-header">
+        <span>🌀 SHAMAN SPIRIT AI</span>
+        <span id="closeChat" style="cursor:pointer; font-size:1.3rem;">✕</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Whisper your question...">
+        <button id="sendChatBtn">Send</button>
+    </div>
+</div>
+
+<script>
+    // Intersection Observer for fade-up animations
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    fadeElements.forEach(el => observer.observe(el));
+
+    // ------ AI Chatbot with full project knowledge ------
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendChatBtn');
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const closeChat = document.getElementById('closeChat');
+
+    function toggleChat() {
+        chatWindow.classList.toggle('hidden');
+    }
+    chatbotToggle.addEventListener('click', toggleChat);
+    closeChat.addEventListener('click', toggleChat);
+
+    function getBotReply(userMessage) {
+        const msg = userMessage.toLowerCase();
+        if (msg.includes('tokenomics') || msg.includes('supply') || msg.includes('tax') || msg.includes('fee')) {
+            return "⚡ SHAMAN TOKENOMICS: Total Supply: 1,000,000,000 tokens. 100% Liquidity (fair launch model), all tokens added to liquidity at launch. Team Allocation: NONE. Taxes: 0% (no buy, no sell, no hidden fees). Minting: Not allowed — fixed supply.";
+        }
+        if (msg.includes('origin') || (msg.includes('king') && msg.includes('story')) || msg.includes('what is shaman')) {
+            return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant, every holder becomes a spirit medium. The Shaman King does not pump — He ascends.";
+        }
+        if (msg.includes('narrative') || msg.includes('ritual') || msg.includes('before charts')) {
+            return "🌀 Before charts… Before noise… There was only the ritual. A king watched in a realm beyond sight. The weak saw nothing, the chosen felt the pull. ShamanKing is an ascension — a test of who enters and who hesitates. The gate is opening.";
+        }
+        if (msg.includes('roadmap') || msg.includes('phase')) {
+            return "🗺 ROADMAP: Phase1: Awakening (Pre-Launch) — Community active, early supporters, website live. Phase2: Spirit Gathering — organic growth, memes, hype. Phase3: Energy Release — official launch, liquidity added, marketing push. Phase4: Shaman Ascension — partnerships, expanded campaigns, listings (DEX/CEX possible). Built by the tribe, powered by energy.";
+        }
+        if (msg.includes('launch') || msg.includes('when')) {
+            return "⏳ The official launch timeline is part of Phase 3: Energy Release. Exact date to be announced across Telegram & X. Stay vigilant — the ritual awakens soon!";
+        }
+        if (msg.includes('tax') || msg.includes('buy tax') || msg.includes('sell tax')) {
+            return "💰 $SHAMAN has 0% taxes! No buy tax, no sell tax, no hidden fees. Pure fair launch experience.";
+        }
+        if (msg.includes('ca') || msg.includes('contract')) {
+            return "🔮 Contract Address (CA): Coming Soon. It will be released before official launch — keep an eye on official channels.";
+        }
+        if (msg.includes('community') || msg.includes('telegram') || msg.includes('twitter') || msg.includes('x')) {
+            return "👥 Join the Tribe: Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin?s=21. Connect with the spirit circle.";
+        }
+        if (msg.includes('chart') || msg.includes('dex') || msg.includes('dexscreener')) {
+            return "📈 Live chart via Dexscreener will be embedded after official launch. Currently 'Coming Soon' — once liquidity is added, the real chart will appear.";
+        }
+        if (msg.includes('buy') || msg.includes('purchase')) {
+            return "🛒 Buy Link: Coming Soon. The fair launch model will have all liquidity available at launch. No presale, no insider allocation.";
+        }
+        if (msg.includes('team') || msg.includes('insider')) {
+            return "🔒 Team Allocation: NONE. Zero tokens reserved for team or insiders. 100% fair launch. The ShamanKing tribe owns the spirit.";
+        }
+        if (msg.includes('mint') || msg.includes('minting')) {
+            return "❌ Minting is NOT allowed. Fixed supply of 1,000,000,000 tokens, no additional tokens will ever be created.";
+        }
+        if (msg.includes('ascension') || msg.includes('king')) {
+            return "👑 The Shaman King does not rule— he watches. Ascension is for those who step forward, feel the pull, and become conduits. A few will become king.";
+        }
+        return "🧙 The spirits whisper: ask me about tokenomics, roadmap, origin, narrative, community, taxes, launch, chart, CA, or the ascension ritual. What draws your soul?";
+    }
+
+    function addMessage(text, sender) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add(sender === 'user' ? 'user-msg' : 'bot-msg');
+        msgDiv.innerText = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function handleUserMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        addMessage(message, 'user');
+        chatInput.value = '';
+        const reply = getBotReply(message);
+        setTimeout(() => {
+            addMessage(reply, 'bot');
+        }, 300);
+    }
+
+    sendBtn.addEventListener('click', handleUserMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleUserMessage();
+    });
+
+    // Buy link coming soon alert
+    document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert("🌀 The ShamanKing portal is still charging. Buy Link will be revealed at launch. Stay close to the tribe!");
+    });
+</script>
+</body>
+</html>
