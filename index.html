@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="ShamanKing — the ascension of the ancient token. A covenant bridging mortal realm and spirit world. Zero taxes, fair launch, community-driven.">
-    <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, zero tax, spirit token, ascension, DeFi, shaman">
+    <meta name="description" content="ShamanKing — the ascension of the ancient token. A covenant bridging mortal realm and spirit world. 1.25% tax, fair launch, community-driven.">
+    <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, low tax, spirit token, ascension, DeFi, shaman">
     <meta name="author" content="ShamanKing Tribe">
     <title>ShamanKing | Ascension of the Ancient Token</title>
     <!-- Google Fonts: Orbitron + Inter -->
@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* Background image with opacity */
+        /* Background image with improved visibility (higher opacity, lower overlay) */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +37,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            opacity: 0.45;
+            opacity: 0.45;  /* increased for more presence */
             z-index: -2;
         }
 
@@ -49,7 +49,7 @@
             width: 100%;
             height: 100%;
             background: #05070D;
-            opacity: 0.4;
+            opacity: 0.3;   /* reduced so background image shows clearly */
             z-index: -1;
         }
 
@@ -137,7 +137,7 @@
             box-shadow: 0 8px 22px rgba(0,174,239,0.5);
         }
 
-        /* Social icon buttons (no extra links) */
+        /* Social icon buttons */
         .social-icon-btn {
             display: inline-flex;
             align-items: center;
@@ -237,16 +237,29 @@
             margin-top: 2rem;
         }
 
-        /* Grid */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem;
+        /* Video section - autoplay, no controls */
+        .video-section {
+            margin: 2rem 0 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0,174,239,0.3);
+            transition: 0.3s;
+        }
+        .video-section:hover {
+            border-color: #00AEEF;
+            box-shadow: 0 0 25px rgba(0,174,239,0.2);
+        }
+        .mystic-video {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
         }
 
+        /* Tokenomics grid */
         .tokenomics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
@@ -289,7 +302,7 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Chart widget - simple coming soon */
+        /* Chart widget */
         .chart-widget {
             background: #0B0F1A;
             border-radius: 20px;
@@ -316,7 +329,7 @@
             font-family: 'Orbitron', monospace;
         }
 
-        /* CA section - clean */
+        /* CA section */
         .ca-card {
             text-align: center;
             background: #0B0F1A;
@@ -354,7 +367,7 @@
             font-size: 0.85rem;
         }
 
-        /* Chatbot (same as before, functional) */
+        /* Chatbot */
         .chatbot-toggle {
             position: fixed;
             bottom: 28px;
@@ -484,6 +497,9 @@
                 width: 110px;
                 height: 110px;
             }
+            .coming-soon-badge {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -499,9 +515,16 @@
         <div class="hero-tagline">“The Shaman King does not pump. He ascends.”</div>
         <div class="hero-buttons">
             <a href="#" class="btn-primary" id="buyComingSoonBtn">Buy Link: Coming Soon</a>
-            <!-- Dexscreener link removed from hero as requested -->
         </div>
     </section>
+
+    <!-- Video Section (autoplay, no controls, loop) -->
+    <div class="video-section fade-up">
+        <video class="mystic-video" autoplay muted loop playsinline disablePictureInPicture>
+            <source src="shaman.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <!-- About: Origin of the King (Full Text) -->
     <section class="fade-up">
@@ -526,19 +549,19 @@
         </div>
     </section>
 
-    <!-- Tokenomics (full details) -->
+    <!-- Updated Tokenomics (1.25% tax with use case) -->
     <section class="fade-up">
         <h2>📜 SHAMANKING TOKENOMICS</h2>
         <div class="tokenomics-grid">
             <div class="card"><strong>Total Supply</strong><br>1,000,000,000 tokens</div>
             <div class="card"><strong>Liquidity</strong><br>100% (fair launch model)<br>All tokens added to liquidity at launch for public trading</div>
             <div class="card"><strong>Team Allocation</strong><br>None — No reserved tokens for team or insiders</div>
-            <div class="card"><strong>Taxes</strong><br>0% — No buy tax, no sell tax, no hidden fees</div>
+            <div class="card"><strong>Taxes</strong><br>1.25%<br>Low buy and sell tax to support growth and stability<br><span style="font-size:0.85rem; color:#9FB3C8;">Tax Use: Supports marketing and liquidity for long-term sustainability</span></div>
             <div class="card"><strong>Minting</strong><br>Not allowed — Fixed supply with no additional tokens created</div>
         </div>
     </section>
 
-    <!-- CA Section: Only CA text (no extra links) -->
+    <!-- CA Section: Only CA text -->
     <section class="fade-up">
         <h2>🔗 CONTRACT ADDRESS</h2>
         <div class="ca-card">
@@ -596,7 +619,7 @@
         </div>
     </section>
 
-    <!-- Live Chart Widget - only "Coming Soon" without extra details -->
+    <!-- Live Chart Widget - only "Coming Soon" -->
     <section class="fade-up">
         <h2>📈 LIVE CHART — DEXSCREENER</h2>
         <div class="chart-widget">
@@ -604,7 +627,7 @@
         </div>
     </section>
 
-    <!-- Community Section: only Telegram and X with real icons (no buy/dexscreener) -->
+    <!-- Community Section: only Telegram and X with real icons -->
     <section class="fade-up">
         <h2>👥 JOIN THE TRIBE</h2>
         <div class="card" style="text-align: center;">
@@ -660,7 +683,7 @@
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     fadeElements.forEach(el => observer.observe(el));
 
-    // ------ AI Chatbot with full project knowledge ------
+    // ------ AI Chatbot with updated tokenomics knowledge ------
     const chatMessages = document.getElementById('chatMessages');
     const chatInput = document.getElementById('chatInput');
     const sendBtn = document.getElementById('sendChatBtn');
@@ -677,7 +700,7 @@
     function getBotReply(userMessage) {
         const msg = userMessage.toLowerCase();
         if (msg.includes('tokenomics') || msg.includes('supply') || msg.includes('tax') || msg.includes('fee')) {
-            return "⚡ SHAMAN TOKENOMICS: Total Supply: 1,000,000,000 tokens. 100% Liquidity (fair launch model), all tokens added to liquidity at launch. Team Allocation: NONE. Taxes: 0% (no buy, no sell, no hidden fees). Minting: Not allowed — fixed supply.";
+            return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team Allocation: NONE. Taxes: 1.25% (low buy & sell tax to support growth and stability). Tax Use: marketing and liquidity for long-term sustainability. Minting disabled.";
         }
         if (msg.includes('origin') || (msg.includes('king') && msg.includes('story')) || msg.includes('what is shaman')) {
             return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant, every holder becomes a spirit medium. The Shaman King does not pump — He ascends.";
@@ -686,13 +709,13 @@
             return "🌀 Before charts… Before noise… There was only the ritual. A king watched in a realm beyond sight. The weak saw nothing, the chosen felt the pull. ShamanKing is an ascension — a test of who enters and who hesitates. The gate is opening.";
         }
         if (msg.includes('roadmap') || msg.includes('phase')) {
-            return "🗺 ROADMAP: Phase1: Awakening (Pre-Launch) — Community active, early supporters, website live. Phase2: Spirit Gathering — organic growth, memes, hype. Phase3: Energy Release — official launch, liquidity added, marketing push. Phase4: Shaman Ascension — partnerships, expanded campaigns, listings (DEX/CEX possible). Built by the tribe, powered by energy.";
+            return "🗺 ROADMAP: Phase1: Awakening (Pre-Launch) — Community active, early supporters, website live. Phase2: Spirit Gathering — organic growth, memes, hype. Phase3: Energy Release — official launch, liquidity added, marketing push. Phase4: Shaman Ascension — partnerships, expanded campaigns, listings (DEX/CEX possible). Built by the tribe.";
         }
         if (msg.includes('launch') || msg.includes('when')) {
             return "⏳ The official launch timeline is part of Phase 3: Energy Release. Exact date to be announced across Telegram & X. Stay vigilant — the ritual awakens soon!";
         }
         if (msg.includes('tax') || msg.includes('buy tax') || msg.includes('sell tax')) {
-            return "💰 $SHAMAN has 0% taxes! No buy tax, no sell tax, no hidden fees. Pure fair launch experience.";
+            return "💰 $SHAMAN has a low 1.25% tax on buys and sells. The tax supports marketing and liquidity for long-term growth and stability.";
         }
         if (msg.includes('ca') || msg.includes('contract')) {
             return "🔮 Contract Address (CA): Coming Soon. It will be released before official launch — keep an eye on official channels.";
@@ -747,6 +770,12 @@
         e.preventDefault();
         alert("🌀 The ShamanKing portal is still charging. Buy Link will be revealed at launch. Stay close to the tribe!");
     });
+
+    // Force video to play on load (autoplay with mute is allowed)
+    const video = document.querySelector('.mystic-video');
+    if (video) {
+        video.play().catch(e => console.log("Autoplay prevented:", e));
+    }
 </script>
 </body>
 </html>
