@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* Background image with improved visibility (higher opacity, lower overlay) */
+        /* Background image with improved visibility */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +37,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            opacity: 0.45;  /* increased for more presence */
+            opacity: 0.45;
             z-index: -2;
         }
 
@@ -49,11 +49,10 @@
             width: 100%;
             height: 100%;
             background: #05070D;
-            opacity: 0.3;   /* reduced so background image shows clearly */
+            opacity: 0.3;
             z-index: -1;
         }
 
-        /* Main container */
         .container {
             max-width: 1280px;
             margin: 0 auto;
@@ -62,7 +61,6 @@
             z-index: 2;
         }
 
-        /* Scroll animation base */
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -78,7 +76,6 @@
             margin-bottom: 5rem;
         }
 
-        /* Typography */
         h1, h2, h3, .heading-font {
             font-family: 'Orbitron', monospace;
             letter-spacing: 2px;
@@ -99,7 +96,6 @@
             text-shadow: 0 0 8px #00AEEF, 0 0 2px #4FCBFF;
         }
 
-        /* Cards */
         .card {
             background: #0B0F1A;
             border: 1px solid rgba(0,174,239,0.2);
@@ -114,7 +110,6 @@
             transform: translateY(-4px);
         }
 
-        /* Buttons */
         .btn-primary {
             display: inline-block;
             background: #00AEEF;
@@ -137,7 +132,6 @@
             box-shadow: 0 8px 22px rgba(0,174,239,0.5);
         }
 
-        /* Social icon buttons */
         .social-icon-btn {
             display: inline-flex;
             align-items: center;
@@ -168,13 +162,11 @@
             transform: translateY(-2px);
         }
 
-        /* Hero section */
         .hero {
             text-align: center;
             padding: 2rem 1rem 2rem;
         }
 
-        /* Round logo with pulse effect */
         .logo-wrapper {
             width: 160px;
             height: 160px;
@@ -237,30 +229,30 @@
             margin-top: 2rem;
         }
 
-        /* Video section - autoplay, no controls */
+        /* Video section - FIXED */
         .video-section {
-    margin: 2rem 0 3rem;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid rgba(0,174,239,0.3);
-    transition: 0.3s;
-    aspect-ratio: 16 / 9;  /* forces a visible box */
-    background: #000;      /* fallback while loading */
+            margin: 2rem 0 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0,174,239,0.3);
+            transition: 0.3s;
+            aspect-ratio: 16 / 9;
+            background: #000;
         }
-        }
+
         .video-section:hover {
             border-color: #00AEEF;
             box-shadow: 0 0 25px rgba(0,174,239,0.2);
         }
+
         .mystic-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* ensures video fills the box nicely */
-    display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
-        /* Tokenomics grid */
         .tokenomics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -268,7 +260,6 @@
             margin-top: 1rem;
         }
 
-        /* Roadmap */
         .roadmap-list {
             display: flex;
             flex-direction: column;
@@ -306,7 +297,6 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Chart widget */
         .chart-widget {
             background: #0B0F1A;
             border-radius: 20px;
@@ -333,7 +323,6 @@
             font-family: 'Orbitron', monospace;
         }
 
-        /* CA section */
         .ca-card {
             text-align: center;
             background: #0B0F1A;
@@ -354,7 +343,6 @@
             font-weight: 600;
         }
 
-        /* Community section */
         .community-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -371,7 +359,6 @@
             font-size: 0.85rem;
         }
 
-        /* Chatbot */
         .chatbot-toggle {
             position: fixed;
             bottom: 28px;
@@ -522,15 +509,15 @@
         </div>
     </section>
 
-    <!-- Video Section - Fixed: visible, autoplay, no controls -->
-<div class="video-section fade-up">
-    <video class="mystic-video" autoplay muted loop playsinline preload="auto">
-        <source src="shaman.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+    <!-- Video Section - FIXED (autoplay, visible) -->
+    <div class="video-section fade-up">
+        <video class="mystic-video" autoplay muted loop playsinline preload="auto">
+            <source src="shaman.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-    <!-- About: Origin of the King (Full Text) -->
+    <!-- About Section -->
     <section class="fade-up">
         <h2>⚡ THE ORIGIN OF THE KING</h2>
         <div class="card">
@@ -540,7 +527,7 @@
         </div>
     </section>
 
-    <!-- Narrative: Full mystical passage -->
+    <!-- Narrative -->
     <section class="fade-up">
         <h2>🌀 NARRATIVE — THE RITUAL</h2>
         <div class="card">
@@ -553,7 +540,7 @@
         </div>
     </section>
 
-    <!-- Updated Tokenomics (1.25% tax with use case) -->
+    <!-- Tokenomics -->
     <section class="fade-up">
         <h2>📜 SHAMANKING TOKENOMICS</h2>
         <div class="tokenomics-grid">
@@ -565,7 +552,7 @@
         </div>
     </section>
 
-    <!-- CA Section: Only CA text -->
+    <!-- CA Section -->
     <section class="fade-up">
         <h2>🔗 CONTRACT ADDRESS</h2>
         <div class="ca-card">
@@ -573,7 +560,7 @@
         </div>
     </section>
 
-    <!-- Roadmap: Exact Phases -->
+    <!-- Roadmap -->
     <section class="fade-up">
         <h2>🗺 SHAMANKING ROADMAP</h2>
         <div class="roadmap-list">
@@ -623,7 +610,7 @@
         </div>
     </section>
 
-    <!-- Live Chart Widget - only "Coming Soon" -->
+    <!-- Live Chart Widget -->
     <section class="fade-up">
         <h2>📈 LIVE CHART — DEXSCREENER</h2>
         <div class="chart-widget">
@@ -631,7 +618,7 @@
         </div>
     </section>
 
-    <!-- Community Section: only Telegram and X with real icons -->
+    <!-- Community -->
     <section class="fade-up">
         <h2>👥 JOIN THE TRIBE</h2>
         <div class="card" style="text-align: center;">
@@ -655,7 +642,7 @@
     </footer>
 </div>
 
-<!-- Floating Chatbot Toggle -->
+<!-- Chatbot Toggle -->
 <div class="chatbot-toggle" id="chatbotToggle">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
 </div>
@@ -687,7 +674,7 @@
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     fadeElements.forEach(el => observer.observe(el));
 
-    // ------ AI Chatbot with updated tokenomics knowledge ------
+    // Chatbot logic
     const chatMessages = document.getElementById('chatMessages');
     const chatInput = document.getElementById('chatInput');
     const sendBtn = document.getElementById('sendChatBtn');
@@ -769,25 +756,21 @@
         if (e.key === 'Enter') handleUserMessage();
     });
 
-    // Buy link coming soon alert
+    // Buy link alert
     document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         alert("🌀 The ShamanKing portal is still charging. Buy Link will be revealed at launch. Stay close to the tribe!");
     });
 
-    // Force video to play on load (autoplay with mute is allowed)
-    const video = document.querySelector('.mystic-video');
-    if (video) {
-        video.play().catch(e => console.log("Autoplay prevented:", e));
+    // Video autoplay - fixed duplicate variable and robust play
+    const videoElement = document.querySelector('.mystic-video');
+    if (videoElement) {
+        videoElement.play().catch(e => {
+            console.log("Autoplay blocked, retrying with muted force", e);
+            videoElement.muted = true;
+            videoElement.play();
+        });
     }
-    const video = document.querySelector('.mystic-video');
-if (video) {
-    video.play().catch(e => {
-        console.log("Autoplay failed, trying muted play", e);
-        video.muted = true;
-        video.play();
-    });
-}
 </script>
 </body>
 </html>
