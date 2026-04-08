@@ -59,14 +59,12 @@
             z-index: 2;
         }
 
-        /* Simple fade-in on scroll (safe, doesn't hide by default) */
         .fade-up {
             opacity: 1;
             transform: translateY(0);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-        /* Only apply animation when they come into view, but never hide */
         .fade-up.animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -198,15 +196,9 @@
         }
 
         @keyframes pulseGlow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0,174,239,0.5);
-            }
-            70% {
-                box-shadow: 0 0 0 18px rgba(0,174,239,0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(0,174,239,0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(0,174,239,0.5); }
+            70% { box-shadow: 0 0 0 18px rgba(0,174,239,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,174,239,0); }
         }
 
         .hero h1 {
@@ -234,27 +226,32 @@
             margin-top: 2rem;
         }
 
-        .video-section {
+        /* Video embed container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
             margin: 2rem 0 3rem;
             border-radius: 20px;
-            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid rgba(0,174,239,0.3);
             transition: 0.3s;
-            aspect-ratio: 16 / 9;
             background: #000;
         }
 
-        .video-section:hover {
+        .video-wrapper:hover {
             border-color: #00AEEF;
             box-shadow: 0 0 25px rgba(0,174,239,0.2);
         }
 
-        .mystic-video {
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
+            border: none;
         }
 
         .tokenomics-grid {
@@ -475,26 +472,12 @@
         }
 
         @media (max-width: 680px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-            .logo-wrapper {
-                width: 130px;
-                height: 130px;
-            }
-            .hero-logo {
-                width: 110px;
-                height: 110px;
-            }
-            .coming-soon-badge {
-                font-size: 1.3rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .logo-wrapper { width: 130px; height: 130px; }
+            .hero-logo { width: 110px; height: 110px; }
+            .coming-soon-badge { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -513,12 +496,16 @@
         </div>
     </section>
 
-    <!-- Video Section -->
-    <div class="video-section fade-up animate-on-scroll">
-        <video class="mystic-video" autoplay muted loop playsinline preload="auto">
-            <source src="shaman.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- YouTube Embedded Video - Autoplay, Loop, No Controls -->
+    <div class="video-wrapper fade-up animate-on-scroll">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/b_SOIqqIEQQ?autoplay=1&mute=1&controls=0&loop=1&playlist=b_SOIqqIEQQ&modestbranding=1&rel=0&showinfo=0" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
     </div>
 
     <!-- About -->
@@ -568,34 +555,18 @@
     <section class="fade-up animate-on-scroll">
         <h2>🗺 SHAMANKING ROADMAP</h2>
         <div class="roadmap-list">
-            <div class="phase-card">
-                <div class="phase-title">Phase 1: Awakening (Pre-Launch)</div>
-                <ul class="phase-desc"><li>Community channels are active (Telegram, X)</li><li>Early supporters begin to gather</li><li>Website goes live</li><li>Build consistent engagement and awareness</li><li>Establish the ShamanKing identity and presence</li></ul>
-            </div>
-            <div class="phase-card">
-                <div class="phase-title">Phase 2: Spirit Gathering</div>
-                <ul class="phase-desc"><li>Grow the community organically</li><li>Daily engagement and updates</li><li>Meme creation and community-driven content</li><li>Small events and interactions</li><li>Begin building hype toward launch</li></ul>
-            </div>
-            <div class="phase-card">
-                <div class="phase-title">Phase 3: Energy Release (Launch)</div>
-                <ul class="phase-desc"><li>Official token launch</li><li>Liquidity added</li><li>First wave of holders joins</li><li>Marketing push begins</li><li>Strong community participation</li></ul>
-            </div>
-            <div class="phase-card">
-                <div class="phase-title">Phase 4: Shaman Ascension</div>
-                <ul class="phase-desc"><li>Partnerships and collaborations</li><li>Expanded marketing campaigns</li><li>Community events and rewards</li><li>Listings (DEX/CEX if possible)</li><li>Long-term growth and ecosystem expansion</li></ul>
-            </div>
+            <div class="phase-card"><div class="phase-title">Phase 1: Awakening (Pre-Launch)</div><ul class="phase-desc"><li>Community channels are active (Telegram, X)</li><li>Early supporters begin to gather</li><li>Website goes live</li><li>Build consistent engagement and awareness</li><li>Establish the ShamanKing identity and presence</li></ul></div>
+            <div class="phase-card"><div class="phase-title">Phase 2: Spirit Gathering</div><ul class="phase-desc"><li>Grow the community organically</li><li>Daily engagement and updates</li><li>Meme creation and community-driven content</li><li>Small events and interactions</li><li>Begin building hype toward launch</li></ul></div>
+            <div class="phase-card"><div class="phase-title">Phase 3: Energy Release (Launch)</div><ul class="phase-desc"><li>Official token launch</li><li>Liquidity added</li><li>First wave of holders joins</li><li>Marketing push begins</li><li>Strong community participation</li></ul></div>
+            <div class="phase-card"><div class="phase-title">Phase 4: Shaman Ascension</div><ul class="phase-desc"><li>Partnerships and collaborations</li><li>Expanded marketing campaigns</li><li>Community events and rewards</li><li>Listings (DEX/CEX if possible)</li><li>Long-term growth and ecosystem expansion</li></ul></div>
         </div>
-        <div style="margin-top: 2rem; text-align: center; font-style: italic; font-weight: 500; background: #0B0F1A; border-radius: 40px; padding: 1rem;">
-            ✨ Built by the tribe, powered by energy, driven by belief.
-        </div>
+        <div style="margin-top: 2rem; text-align: center; font-style: italic; font-weight: 500; background: #0B0F1A; border-radius: 40px; padding: 1rem;">✨ Built by the tribe, powered by energy, driven by belief.</div>
     </section>
 
     <!-- Chart -->
     <section class="fade-up animate-on-scroll">
         <h2>📈 LIVE CHART — DEXSCREENER</h2>
-        <div class="chart-widget">
-            <div class="coming-soon-badge">Coming Soon</div>
-        </div>
+        <div class="chart-widget"><div class="coming-soon-badge">Coming Soon</div></div>
     </section>
 
     <!-- Community -->
@@ -604,49 +575,25 @@
         <div class="card" style="text-align: center;">
             <p style="margin-bottom: 1.5rem;">Step into the spirit circle. Become part of the ascension.</p>
             <div class="community-buttons">
-                <a href="https://t.me/ShamanKingCoin_Chat" target="_blank" class="social-icon-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2 12.5l6 2 10-6-6 6 6 2-4.5 5.5"/></svg>
-                    Telegram
-                </a>
-                <a href="https://x.com/shamankingcoin?s=21" target="_blank" class="social-icon-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 14.933L20 4"/><circle cx="8.5" cy="13.5" r="2.5"/><circle cx="15.5" cy="9.5" r="2.5"/></svg>
-                    X (Twitter)
-                </a>
+                <a href="https://t.me/ShamanKingCoin_Chat" target="_blank" class="social-icon-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2 12.5l6 2 10-6-6 6 6 2-4.5 5.5"/></svg> Telegram</a>
+                <a href="https://x.com/shamankingcoin?s=21" target="_blank" class="social-icon-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 14.933L20 4"/><circle cx="8.5" cy="13.5" r="2.5"/><circle cx="15.5" cy="9.5" r="2.5"/></svg> X (Twitter)</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 ShamanKing — The ascension of the ancient token. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">Powered by the tribe</p>
-    </footer>
+    <footer><p>© 2026 ShamanKing — The ascension of the ancient token. All rights reserved.</p><p style="margin-top: 0.5rem;">Powered by the tribe</p></footer>
 </div>
 
 <!-- Chatbot -->
-<div class="chatbot-toggle" id="chatbotToggle">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
-</div>
-
-<div id="chatWindow" class="chat-window hidden">
-    <div class="chat-header"><span>🌀 SHAMAN SPIRIT AI</span><span id="closeChat" style="cursor:pointer;">✕</span></div>
-    <div class="chat-messages" id="chatMessages"><div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div></div>
-    <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Whisper your question..."><button id="sendChatBtn">Send</button></div>
-</div>
+<div class="chatbot-toggle" id="chatbotToggle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
+<div id="chatWindow" class="chat-window hidden"><div class="chat-header"><span>🌀 SHAMAN SPIRIT AI</span><span id="closeChat" style="cursor:pointer;">✕</span></div><div class="chat-messages" id="chatMessages"><div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Whisper your question..."><button id="sendChatBtn">Send</button></div></div>
 
 <script>
-    // Ensure all content is visible first (safety)
-    document.querySelectorAll('.fade-up').forEach(el => {
-        el.classList.add('visible');
-    });
-
-    // Then set up scroll animation (will re-trigger but doesn't hide)
+    // Ensure all content visible initially
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     animatedElements.forEach(el => observer.observe(el));
 
@@ -664,19 +611,16 @@
 
     function getBotReply(msg) {
         const m = msg.toLowerCase();
-        if (m.includes('tokenomics') || m.includes('supply') || m.includes('tax')) return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team: NONE. Taxes: 1.25% (low buy/sell). Tax Use: marketing & liquidity. Minting disabled.";
-        if (m.includes('origin') || (m.includes('king') && m.includes('story'))) return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant. The Shaman King does not pump — He ascends.";
-        if (m.includes('narrative') || m.includes('ritual')) return "🌀 Before charts… Before noise… There was only the ritual. A king watched. The chosen felt the pull. ShamanKing is an ascension — a test of who enters.";
-        if (m.includes('roadmap') || m.includes('phase')) return "🗺 Phase1: Awakening. Phase2: Spirit Gathering. Phase3: Energy Release (Launch). Phase4: Shaman Ascension (partnerships, listings). Built by the tribe.";
-        if (m.includes('launch') || m.includes('when')) return "⏳ Launch is Phase 3. Exact date TBA on Telegram & X. Stay vigilant!";
-        if (m.includes('tax')) return "💰 1.25% tax on buys and sells. Supports marketing & liquidity.";
-        if (m.includes('ca') || m.includes('contract')) return "🔮 CA: Coming Soon. Released before official launch.";
-        if (m.includes('community') || m.includes('telegram') || m.includes('twitter')) return "👥 Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin";
-        if (m.includes('chart') || m.includes('dex')) return "📈 Live chart via Dexscreener — Coming Soon after launch.";
-        if (m.includes('buy')) return "🛒 Buy Link: Coming Soon. Fair launch, no presale.";
-        if (m.includes('team') || m.includes('insider')) return "🔒 Team Allocation: NONE. 100% fair launch.";
-        if (m.includes('mint')) return "❌ Minting disabled. Fixed supply.";
-        return "🧙 Ask me about tokenomics, roadmap, origin, narrative, community, taxes, launch, chart, or CA.";
+        if (m.includes('tokenomics') || m.includes('supply') || m.includes('tax')) return "⚡ Total Supply 1B, 100% fair launch, 0% team, 1.25% tax for marketing/liquidity, minting disabled.";
+        if (m.includes('origin')) return "🧿 Ancient shamans bridged realms. $SHAMAN is a covenant. The King ascends.";
+        if (m.includes('narrative') || m.includes('ritual')) return "🌀 Before charts, there was ritual. The chosen feel the pull. Ascension awaits.";
+        if (m.includes('roadmap')) return "🗺 Phase1 Awakening → Phase2 Spirit Gathering → Phase3 Launch → Phase4 Ascension (listings, partnerships).";
+        if (m.includes('launch')) return "⏳ Launch = Phase 3. Date TBA on Telegram & X.";
+        if (m.includes('ca') || m.includes('contract')) return "🔮 CA: Coming Soon.";
+        if (m.includes('community') || m.includes('telegram') || m.includes('twitter')) return "👥 Telegram & X links in the Join section.";
+        if (m.includes('chart')) return "📈 Dexscreener chart: Coming Soon after launch.";
+        if (m.includes('buy')) return "🛒 Buy link at launch. Fair launch, no presale.";
+        return "🧙 Ask about tokenomics, roadmap, origin, narrative, community, taxes, launch, chart, or CA.";
     }
 
     function addMessage(text, sender) {
@@ -697,15 +641,7 @@
 
     sendBtn.addEventListener('click', handleUserMessage);
     chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleUserMessage(); });
-
-    document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert("🌀 Buy Link will be revealed at launch.");
-    });
-
-    // Video autoplay
-    const videoEl = document.querySelector('.mystic-video');
-    if (videoEl) videoEl.play().catch(e => { videoEl.muted = true; videoEl.play(); });
+    document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => { e.preventDefault(); alert("🌀 Buy Link will be revealed at launch."); });
 </script>
 </body>
 </html>
