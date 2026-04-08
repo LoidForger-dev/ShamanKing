@@ -7,7 +7,6 @@
     <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, low tax, spirit token, ascension, DeFi, shaman">
     <meta name="author" content="ShamanKing Tribe">
     <title>ShamanKing | Ascension of the Ancient Token</title>
-    <!-- Google Fonts: Orbitron + Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -24,7 +23,6 @@
             position: relative;
         }
 
-        /* Background image with improved visibility */
         body::before {
             content: "";
             position: fixed;
@@ -61,15 +59,22 @@
             z-index: 2;
         }
 
+        /* Simple fade-in on scroll (safe, doesn't hide by default) */
         .fade-up {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        /* Only apply animation when they come into view, but never hide */
+        .fade-up.animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
         }
 
         .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
         section {
@@ -229,7 +234,6 @@
             margin-top: 2rem;
         }
 
-        /* Video section - FIXED */
         .video-section {
             margin: 2rem 0 3rem;
             border-radius: 20px;
@@ -498,7 +502,7 @@
 
 <div class="container">
     <!-- Hero Section -->
-    <section class="hero fade-up">
+    <section class="hero fade-up animate-on-scroll">
         <div class="logo-wrapper">
             <img src="shaman.png" alt="ShamanKing Emblem" class="hero-logo">
         </div>
@@ -509,16 +513,16 @@
         </div>
     </section>
 
-    <!-- Video Section - FIXED (autoplay, visible) -->
-    <div class="video-section fade-up">
+    <!-- Video Section -->
+    <div class="video-section fade-up animate-on-scroll">
         <video class="mystic-video" autoplay muted loop playsinline preload="auto">
             <source src="shaman.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- About Section -->
-    <section class="fade-up">
+    <!-- About -->
+    <section class="fade-up animate-on-scroll">
         <h2>⚡ THE ORIGIN OF THE KING</h2>
         <div class="card">
             <p style="font-size:1.05rem; margin-bottom: 1rem;">Long before blockchains were forged, the shamans whispered of a token that would bridge the mortal realm and the spirit world. A coin baptized in ritual fire, sealed with the mark of the ancient kings.</p>
@@ -528,7 +532,7 @@
     </section>
 
     <!-- Narrative -->
-    <section class="fade-up">
+    <section class="fade-up animate-on-scroll">
         <h2>🌀 NARRATIVE — THE RITUAL</h2>
         <div class="card">
             <p><em>Before charts… Before noise… There was only the ritual.</em></p>
@@ -541,7 +545,7 @@
     </section>
 
     <!-- Tokenomics -->
-    <section class="fade-up">
+    <section class="fade-up animate-on-scroll">
         <h2>📜 SHAMANKING TOKENOMICS</h2>
         <div class="tokenomics-grid">
             <div class="card"><strong>Total Supply</strong><br>1,000,000,000 tokens</div>
@@ -552,8 +556,8 @@
         </div>
     </section>
 
-    <!-- CA Section -->
-    <section class="fade-up">
+    <!-- CA -->
+    <section class="fade-up animate-on-scroll">
         <h2>🔗 CONTRACT ADDRESS</h2>
         <div class="ca-card">
             <div class="ca-text">CA: Coming Soon</div>
@@ -561,48 +565,24 @@
     </section>
 
     <!-- Roadmap -->
-    <section class="fade-up">
+    <section class="fade-up animate-on-scroll">
         <h2>🗺 SHAMANKING ROADMAP</h2>
         <div class="roadmap-list">
             <div class="phase-card">
                 <div class="phase-title">Phase 1: Awakening (Pre-Launch)</div>
-                <ul class="phase-desc">
-                    <li>Community channels are active (Telegram, X)</li>
-                    <li>Early supporters begin to gather</li>
-                    <li>Website goes live</li>
-                    <li>Build consistent engagement and awareness</li>
-                    <li>Establish the ShamanKing identity and presence</li>
-                </ul>
+                <ul class="phase-desc"><li>Community channels are active (Telegram, X)</li><li>Early supporters begin to gather</li><li>Website goes live</li><li>Build consistent engagement and awareness</li><li>Establish the ShamanKing identity and presence</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 2: Spirit Gathering</div>
-                <ul class="phase-desc">
-                    <li>Grow the community organically</li>
-                    <li>Daily engagement and updates</li>
-                    <li>Meme creation and community-driven content</li>
-                    <li>Small events and interactions</li>
-                    <li>Begin building hype toward launch</li>
-                </ul>
+                <ul class="phase-desc"><li>Grow the community organically</li><li>Daily engagement and updates</li><li>Meme creation and community-driven content</li><li>Small events and interactions</li><li>Begin building hype toward launch</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 3: Energy Release (Launch)</div>
-                <ul class="phase-desc">
-                    <li>Official token launch</li>
-                    <li>Liquidity added</li>
-                    <li>First wave of holders joins</li>
-                    <li>Marketing push begins</li>
-                    <li>Strong community participation</li>
-                </ul>
+                <ul class="phase-desc"><li>Official token launch</li><li>Liquidity added</li><li>First wave of holders joins</li><li>Marketing push begins</li><li>Strong community participation</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 4: Shaman Ascension</div>
-                <ul class="phase-desc">
-                    <li>Partnerships and collaborations</li>
-                    <li>Expanded marketing campaigns</li>
-                    <li>Community events and rewards</li>
-                    <li>Listings (DEX/CEX if possible)</li>
-                    <li>Long-term growth and ecosystem expansion</li>
-                </ul>
+                <ul class="phase-desc"><li>Partnerships and collaborations</li><li>Expanded marketing campaigns</li><li>Community events and rewards</li><li>Listings (DEX/CEX if possible)</li><li>Long-term growth and ecosystem expansion</li></ul>
             </div>
         </div>
         <div style="margin-top: 2rem; text-align: center; font-style: italic; font-weight: 500; background: #0B0F1A; border-radius: 40px; padding: 1rem;">
@@ -610,8 +590,8 @@
         </div>
     </section>
 
-    <!-- Live Chart Widget -->
-    <section class="fade-up">
+    <!-- Chart -->
+    <section class="fade-up animate-on-scroll">
         <h2>📈 LIVE CHART — DEXSCREENER</h2>
         <div class="chart-widget">
             <div class="coming-soon-badge">Coming Soon</div>
@@ -619,7 +599,7 @@
     </section>
 
     <!-- Community -->
-    <section class="fade-up">
+    <section class="fade-up animate-on-scroll">
         <h2>👥 JOIN THE TRIBE</h2>
         <div class="card" style="text-align: center;">
             <p style="margin-bottom: 1.5rem;">Step into the spirit circle. Become part of the ascension.</p>
@@ -642,37 +622,33 @@
     </footer>
 </div>
 
-<!-- Chatbot Toggle -->
+<!-- Chatbot -->
 <div class="chatbot-toggle" id="chatbotToggle">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
 </div>
 
 <div id="chatWindow" class="chat-window hidden">
-    <div class="chat-header">
-        <span>🌀 SHAMAN SPIRIT AI</span>
-        <span id="closeChat" style="cursor:pointer; font-size:1.3rem;">✕</span>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-        <div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div>
-    </div>
-    <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Whisper your question...">
-        <button id="sendChatBtn">Send</button>
-    </div>
+    <div class="chat-header"><span>🌀 SHAMAN SPIRIT AI</span><span id="closeChat" style="cursor:pointer;">✕</span></div>
+    <div class="chat-messages" id="chatMessages"><div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Whisper your question..."><button id="sendChatBtn">Send</button></div>
 </div>
 
 <script>
-    // Intersection Observer for fade-up animations
-    const fadeElements = document.querySelectorAll('.fade-up');
+    // Ensure all content is visible first (safety)
+    document.querySelectorAll('.fade-up').forEach(el => {
+        el.classList.add('visible');
+    });
+
+    // Then set up scroll animation (will re-trigger but doesn't hide)
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-    fadeElements.forEach(el => observer.observe(el));
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => observer.observe(el));
 
     // Chatbot logic
     const chatMessages = document.getElementById('chatMessages');
@@ -682,61 +658,32 @@
     const chatWindow = document.getElementById('chatWindow');
     const closeChat = document.getElementById('closeChat');
 
-    function toggleChat() {
-        chatWindow.classList.toggle('hidden');
-    }
+    function toggleChat() { chatWindow.classList.toggle('hidden'); }
     chatbotToggle.addEventListener('click', toggleChat);
     closeChat.addEventListener('click', toggleChat);
 
-    function getBotReply(userMessage) {
-        const msg = userMessage.toLowerCase();
-        if (msg.includes('tokenomics') || msg.includes('supply') || msg.includes('tax') || msg.includes('fee')) {
-            return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team Allocation: NONE. Taxes: 1.25% (low buy & sell tax to support growth and stability). Tax Use: marketing and liquidity for long-term sustainability. Minting disabled.";
-        }
-        if (msg.includes('origin') || (msg.includes('king') && msg.includes('story')) || msg.includes('what is shaman')) {
-            return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant, every holder becomes a spirit medium. The Shaman King does not pump — He ascends.";
-        }
-        if (msg.includes('narrative') || msg.includes('ritual') || msg.includes('before charts')) {
-            return "🌀 Before charts… Before noise… There was only the ritual. A king watched in a realm beyond sight. The weak saw nothing, the chosen felt the pull. ShamanKing is an ascension — a test of who enters and who hesitates. The gate is opening.";
-        }
-        if (msg.includes('roadmap') || msg.includes('phase')) {
-            return "🗺 ROADMAP: Phase1: Awakening (Pre-Launch) — Community active, early supporters, website live. Phase2: Spirit Gathering — organic growth, memes, hype. Phase3: Energy Release — official launch, liquidity added, marketing push. Phase4: Shaman Ascension — partnerships, expanded campaigns, listings (DEX/CEX possible). Built by the tribe.";
-        }
-        if (msg.includes('launch') || msg.includes('when')) {
-            return "⏳ The official launch timeline is part of Phase 3: Energy Release. Exact date to be announced across Telegram & X. Stay vigilant — the ritual awakens soon!";
-        }
-        if (msg.includes('tax') || msg.includes('buy tax') || msg.includes('sell tax')) {
-            return "💰 $SHAMAN has a low 1.25% tax on buys and sells. The tax supports marketing and liquidity for long-term growth and stability.";
-        }
-        if (msg.includes('ca') || msg.includes('contract')) {
-            return "🔮 Contract Address (CA): Coming Soon. It will be released before official launch — keep an eye on official channels.";
-        }
-        if (msg.includes('community') || msg.includes('telegram') || msg.includes('twitter') || msg.includes('x')) {
-            return "👥 Join the Tribe: Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin?s=21. Connect with the spirit circle.";
-        }
-        if (msg.includes('chart') || msg.includes('dex') || msg.includes('dexscreener')) {
-            return "📈 Live chart via Dexscreener will be embedded after official launch. Currently 'Coming Soon' — once liquidity is added, the real chart will appear.";
-        }
-        if (msg.includes('buy') || msg.includes('purchase')) {
-            return "🛒 Buy Link: Coming Soon. The fair launch model will have all liquidity available at launch. No presale, no insider allocation.";
-        }
-        if (msg.includes('team') || msg.includes('insider')) {
-            return "🔒 Team Allocation: NONE. Zero tokens reserved for team or insiders. 100% fair launch. The ShamanKing tribe owns the spirit.";
-        }
-        if (msg.includes('mint') || msg.includes('minting')) {
-            return "❌ Minting is NOT allowed. Fixed supply of 1,000,000,000 tokens, no additional tokens will ever be created.";
-        }
-        if (msg.includes('ascension') || msg.includes('king')) {
-            return "👑 The Shaman King does not rule— he watches. Ascension is for those who step forward, feel the pull, and become conduits. A few will become king.";
-        }
-        return "🧙 The spirits whisper: ask me about tokenomics, roadmap, origin, narrative, community, taxes, launch, chart, CA, or the ascension ritual. What draws your soul?";
+    function getBotReply(msg) {
+        const m = msg.toLowerCase();
+        if (m.includes('tokenomics') || m.includes('supply') || m.includes('tax')) return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team: NONE. Taxes: 1.25% (low buy/sell). Tax Use: marketing & liquidity. Minting disabled.";
+        if (m.includes('origin') || (m.includes('king') && m.includes('story'))) return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant. The Shaman King does not pump — He ascends.";
+        if (m.includes('narrative') || m.includes('ritual')) return "🌀 Before charts… Before noise… There was only the ritual. A king watched. The chosen felt the pull. ShamanKing is an ascension — a test of who enters.";
+        if (m.includes('roadmap') || m.includes('phase')) return "🗺 Phase1: Awakening. Phase2: Spirit Gathering. Phase3: Energy Release (Launch). Phase4: Shaman Ascension (partnerships, listings). Built by the tribe.";
+        if (m.includes('launch') || m.includes('when')) return "⏳ Launch is Phase 3. Exact date TBA on Telegram & X. Stay vigilant!";
+        if (m.includes('tax')) return "💰 1.25% tax on buys and sells. Supports marketing & liquidity.";
+        if (m.includes('ca') || m.includes('contract')) return "🔮 CA: Coming Soon. Released before official launch.";
+        if (m.includes('community') || m.includes('telegram') || m.includes('twitter')) return "👥 Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin";
+        if (m.includes('chart') || m.includes('dex')) return "📈 Live chart via Dexscreener — Coming Soon after launch.";
+        if (m.includes('buy')) return "🛒 Buy Link: Coming Soon. Fair launch, no presale.";
+        if (m.includes('team') || m.includes('insider')) return "🔒 Team Allocation: NONE. 100% fair launch.";
+        if (m.includes('mint')) return "❌ Minting disabled. Fixed supply.";
+        return "🧙 Ask me about tokenomics, roadmap, origin, narrative, community, taxes, launch, chart, or CA.";
     }
 
     function addMessage(text, sender) {
-        const msgDiv = document.createElement('div');
-        msgDiv.classList.add(sender === 'user' ? 'user-msg' : 'bot-msg');
-        msgDiv.innerText = text;
-        chatMessages.appendChild(msgDiv);
+        const div = document.createElement('div');
+        div.classList.add(sender === 'user' ? 'user-msg' : 'bot-msg');
+        div.innerText = text;
+        chatMessages.appendChild(div);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
@@ -745,32 +692,20 @@
         if (!message) return;
         addMessage(message, 'user');
         chatInput.value = '';
-        const reply = getBotReply(message);
-        setTimeout(() => {
-            addMessage(reply, 'bot');
-        }, 300);
+        setTimeout(() => addMessage(getBotReply(message), 'bot'), 300);
     }
 
     sendBtn.addEventListener('click', handleUserMessage);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleUserMessage();
-    });
+    chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleUserMessage(); });
 
-    // Buy link alert
     document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
-        alert("🌀 The ShamanKing portal is still charging. Buy Link will be revealed at launch. Stay close to the tribe!");
+        alert("🌀 Buy Link will be revealed at launch.");
     });
 
-    // Video autoplay - fixed duplicate variable and robust play
-    const videoElement = document.querySelector('.mystic-video');
-    if (videoElement) {
-        videoElement.play().catch(e => {
-            console.log("Autoplay blocked, retrying with muted force", e);
-            videoElement.muted = true;
-            videoElement.play();
-        });
-    }
+    // Video autoplay
+    const videoEl = document.querySelector('.mystic-video');
+    if (videoEl) videoEl.play().catch(e => { videoEl.muted = true; videoEl.play(); });
 </script>
 </body>
 </html>
