@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="ShamanKing — the ascension of the ancient token. A covenant bridging mortal realm and spirit world. 1.25% tax, fair launch, community-driven. Countdown to the ritual opening.">
-    <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, low tax, spirit token, ascension, DeFi, shaman, countdown, launch date">
+    <meta name="description" content="ShamanKing — the ascension of the ancient token. A covenant bridging mortal realm and spirit world. 1.25% tax, fair launch, community-driven. Live now!">
+    <meta name="keywords" content="ShamanKing, crypto, meme coin, fair launch, low tax, spirit token, ascension, DeFi, shaman, live, CA, buy now">
     <meta name="author" content="ShamanKing Tribe">
-    <title>ShamanKing | Ascension of the Ancient Token | Launch Countdown</title>
+    <title>ShamanKing | Ascension of the Ancient Token | Live Now</title>
     <!-- Google Fonts: Orbitron + Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
@@ -237,91 +237,76 @@
             margin-top: 2rem;
         }
 
-        /* COUNTDOWN TIMER SECTION (new) */
-        .countdown-area {
+        /* LIVE STATUS / ASCENSION SECTION (replaces countdown) */
+        .ascension-live-area {
             text-align: center;
             margin: 1.5rem 0 2.5rem;
-            background: rgba(11, 15, 26, 0.65);
-            backdrop-filter: blur(3px);
+            background: rgba(11, 15, 26, 0.85);
+            backdrop-filter: blur(4px);
             border-radius: 48px;
             padding: 1.8rem 1rem;
-            border: 1px solid rgba(0,174,239,0.4);
+            border: 1px solid #00AEEF;
+            box-shadow: 0 0 25px rgba(0,174,239,0.4);
             transition: all 0.3s ease;
         }
-        .countdown-area:hover {
-            border-color: #00AEEF;
-            box-shadow: 0 0 25px rgba(0,174,239,0.25);
-        }
-        .countdown-title {
+        .ascension-title {
             font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            letter-spacing: 3px;
-            font-size: 1.5rem;
-            color: #00AEEF;
-            text-shadow: 0 0 6px #00AEEF80;
-            margin-bottom: 1.5rem;
-        }
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 1rem 0 1rem;
-        }
-        .time-unit {
-            background: #0B0F1A;
-            border: 1px solid #00AEEF;
-            border-radius: 24px;
-            padding: 0.8rem 1.2rem;
-            min-width: 110px;
-            text-align: center;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        }
-        .time-unit:hover {
-            transform: translateY(-3px);
-            border-color: #4FCBFF;
-            background: #0F1625;
-        }
-        .time-number {
-            font-size: 2.8rem;
             font-weight: 800;
-            font-family: 'Orbitron', monospace;
-            color: #00AEEF;
-            line-height: 1.2;
-            text-shadow: 0 0 5px #00AEEF;
-        }
-        .time-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            color: #9FB3C8;
-        }
-        .countdown-note {
-            font-size: 0.9rem;
-            color: #B8D0E8;
-            margin-top: 1rem;
-            font-weight: 400;
-            background: rgba(0,174,239,0.1);
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-        }
-        .ascension-message {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.4rem;
-            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 1.8rem;
             color: #4FCBFF;
             text-shadow: 0 0 12px #00AEEF;
-            padding: 1rem;
+            margin-bottom: 1rem;
         }
-        @media (max-width: 680px) {
-            .countdown-title { font-size: 1.2rem; }
-            .time-unit { min-width: 75px; padding: 0.5rem 0.8rem; }
-            .time-number { font-size: 1.9rem; }
-            .time-label { font-size: 0.65rem; }
-            .countdown-area { padding: 1.2rem 0.8rem; margin: 1rem 0 2rem; }
+        .ascension-badge {
+            display: inline-block;
+            background: #00AEEF20;
+            border: 1px solid #00AEEF;
+            border-radius: 60px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #E6F7FF;
+            margin-bottom: 1rem;
+        }
+        .live-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .live-link {
+            background: #0B0F1A;
+            border: 1px solid #00AEEF;
+            border-radius: 40px;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #00AEEF;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .live-link:hover {
+            background: #00AEEF;
+            color: #05070D;
+            transform: translateY(-2px);
+        }
+        .ca-short {
+            font-family: monospace;
+            background: #05070D;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .copy-feedback {
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            color: #4FCBFF;
         }
 
         /* Video section */
@@ -389,31 +374,26 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Chart widget */
+        /* Chart widget with iframe */
         .chart-widget {
             background: #0B0F1A;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
             border: 1px solid rgba(0,174,239,0.3);
             transition: 0.3s;
+            overflow: hidden;
         }
-
-        .chart-widget:hover {
-            border-color: #00AEEF;
-            box-shadow: 0 0 18px rgba(0,174,239,0.2);
+        .chart-widget iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: 16px;
+            border: none;
         }
-
-        .coming-soon-badge {
-            font-size: 2rem;
-            font-weight: bold;
-            background: rgba(0,174,239,0.1);
-            display: inline-block;
-            padding: 0.6rem 2rem;
-            border-radius: 60px;
-            color: #4FCBFF;
-            letter-spacing: 3px;
-            font-family: 'Orbitron', monospace;
+        @media (max-width: 680px) {
+            .chart-widget iframe {
+                height: 400px;
+            }
         }
 
         /* CA section */
@@ -424,17 +404,33 @@
             padding: 1.8rem;
             border: 1px solid #00AEEF40;
         }
-
         .ca-text {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-family: monospace;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             background: #05070D;
             display: inline-block;
-            padding: 0.5rem 1.8rem;
+            padding: 0.7rem 1.5rem;
             border-radius: 60px;
             color: #00AEEF;
             font-weight: 600;
+            word-break: break-all;
+            max-width: 100%;
+        }
+        .copy-ca {
+            background: none;
+            border: 1px solid #00AEEF;
+            color: #00AEEF;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            margin-left: 0.8rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+        .copy-ca:hover {
+            background: #00AEEF;
+            color: #05070D;
         }
 
         /* Community section */
@@ -584,7 +580,7 @@
                 width: 110px;
                 height: 110px;
             }
-            .coming-soon-badge {
+            .ascension-title {
                 font-size: 1.3rem;
             }
         }
@@ -601,20 +597,21 @@
         <h1>SHAMANKING</h1>
         <div class="hero-tagline">“The Shaman King does not pump. He ascends.”</div>
         <div class="hero-buttons">
-            <a href="#" class="btn-primary" id="buyComingSoonBtn">Buy Link: Coming Soon</a>
+            <!-- Buy button now points to actual Phantom buy link -->
+            <a href="https://phantom.com/tokens/solana/4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump?referralId=ktwlo0gnzg" target="_blank" class="btn-primary" id="buyButtonReal">⚡ BUY $SHAMAN NOW</a>
         </div>
     </section>
 
-    <!-- ✨ DIGITAL LAUNCH COUNTDOWN ✨ (inserted as required) -->
-    <div class="countdown-area fade-up" id="countdownWidget">
-        <div class="countdown-title">⚡ THE GATE OPENS IN ⚡</div>
-        <div class="countdown-timer" id="countdownTimerDisplay">
-            <div class="time-unit"><div class="time-number" id="daysCount">00</div><div class="time-label">DAYS</div></div>
-            <div class="time-unit"><div class="time-number" id="hoursCount">00</div><div class="time-label">HOURS</div></div>
-            <div class="time-unit"><div class="time-number" id="minutesCount">00</div><div class="time-label">MINUTES</div></div>
-            <div class="time-unit"><div class="time-number" id="secondsCount">00</div><div class="time-label">SECONDS</div></div>
+    <!-- 🔥 ASCENSION ACTIVE SECTION (replaces old countdown) -->
+    <div class="ascension-live-area fade-up">
+        <div class="ascension-title">🌀 THE SPIRIT GATE IS OPEN 🌀</div>
+        <div class="ascension-badge">✦ RITUAL ACTIVE • LIVE TRADING ✦</div>
+        <div class="live-actions">
+            <a href="https://dexscreener.com/solana/4ABWKu9zarg93ADYAkoTwhcX6UoFwn3MagpaYxnTBTu5" target="_blank" class="live-link">📊 DEXSCREENER CHART</a>
+            <a href="https://phantom.com/tokens/solana/4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump?referralId=ktwlo0gnzg" target="_blank" class="live-link">🛒 BUY ON PHANTOM</a>
         </div>
-        <div class="countdown-note">📅 Friday, April 17th, 2026 — 5:00 PM Pacific Time (PST/PDT) • Launch Ritual</div>
+        <div class="ca-short" id="shortCaDisplay" style="cursor:pointer;" title="Click to copy CA">CA: 4uMH5T5...LKpump 📋</div>
+        <div style="font-size:0.75rem; margin-top: 0.5rem;">The ancient token has awakened. Join the ascension.</div>
     </div>
 
     <!-- Video Section (autoplay, no controls, loop) -->
@@ -644,11 +641,11 @@
             <p style="margin-top: 0.75rem;">The weak saw nothing.<br>The chosen felt the pull.<br>A whisper in the storm.<br>A signal in the chaos.</p>
             <p style="margin-top: 0.75rem;"><strong>Shamanking is not a coin.</strong><br>It is an ascension.<br>A test of who enters…<br>and who hesitates.</p>
             <p style="margin-top: 0.75rem;">Some will watch from the outside.<br>Others will step forward.<br>And a few—<br><span class="glow-text" style="font-weight:bold;">will become king</span></p>
-            <p style="margin-top: 1rem; border-top: 1px dashed #00AEEF40; padding-top: 1rem;">The gate is opening. Ascension comes</p>
+            <p style="margin-top: 1rem; border-top: 1px dashed #00AEEF40; padding-top: 1rem;">The gate has opened. Ascension is here.</p>
         </div>
     </section>
 
-    <!-- Updated Tokenomics (1.25% tax) -->
+    <!-- Tokenomics (1.25% tax) -->
     <section class="fade-up">
         <h2>📜 SHAMANKING TOKENOMICS</h2>
         <div class="tokenomics-grid">
@@ -660,11 +657,13 @@
         </div>
     </section>
 
-    <!-- CA Section -->
+    <!-- CA Section with real contract address -->
     <section class="fade-up">
         <h2>🔗 CONTRACT ADDRESS</h2>
         <div class="ca-card">
-            <div class="ca-text">CA: Coming Soon</div>
+            <div class="ca-text" id="fullCaText">4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump</div>
+            <button class="copy-ca" id="copyCaBtn">📋 Copy CA</button>
+            <p style="margin-top: 0.8rem; font-size:0.8rem;">Solana Network (SPL Token)</p>
         </div>
     </section>
 
@@ -674,55 +673,35 @@
         <div class="roadmap-list">
             <div class="phase-card">
                 <div class="phase-title">Phase 1: Awakening (Pre-Launch)</div>
-                <ul class="phase-desc">
-                    <li>Community channels are active (Telegram, X)</li>
-                    <li>Early supporters begin to gather</li>
-                    <li>Website goes live</li>
-                    <li>Build consistent engagement and awareness</li>
-                    <li>Establish the ShamanKing identity and presence</li>
-                </ul>
+                <ul class="phase-desc"><li>Community channels active (Telegram, X)</li><li>Early supporters gather</li><li>Website goes live</li><li>Build consistent engagement</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 2: Spirit Gathering</div>
-                <ul class="phase-desc">
-                    <li>Grow the community organically</li>
-                    <li>Daily engagement and updates</li>
-                    <li>Meme creation and community-driven content</li>
-                    <li>Small events and interactions</li>
-                    <li>Begin building hype toward launch</li>
-                </ul>
+                <ul class="phase-desc"><li>Organic community growth</li><li>Daily engagement & memes</li><li>Hype building toward launch</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 3: Energy Release (Launch)</div>
-                <ul class="phase-desc">
-                    <li>Official token launch</li>
-                    <li>Liquidity added</li>
-                    <li>First wave of holders joins</li>
-                    <li>Marketing push begins</li>
-                    <li>Strong community participation</li>
-                </ul>
+                <ul class="phase-desc"><li>✅ Official token launch — COMPLETED</li><li>Liquidity added</li><li>First wave of holders</li><li>Marketing push begins</li></ul>
             </div>
             <div class="phase-card">
                 <div class="phase-title">Phase 4: Shaman Ascension</div>
-                <ul class="phase-desc">
-                    <li>Partnerships and collaborations</li>
-                    <li>Expanded marketing campaigns</li>
-                    <li>Community events and rewards</li>
-                    <li>Listings (DEX/CEX if possible)</li>
-                    <li>Long-term growth and ecosystem expansion</li>
-                </ul>
+                <ul class="phase-desc"><li>Partnerships & collaborations</li><li>Expanded marketing campaigns</li><li>Community events & rewards</li><li>DEX/CEX listings expansion</li><li>Long-term ecosystem growth</li></ul>
             </div>
         </div>
         <div style="margin-top: 2rem; text-align: center; font-style: italic; font-weight: 500; background: #0B0F1A; border-radius: 40px; padding: 1rem;">
-            ✨ Built by the tribe, powered by energy, driven by belief.
+            ✨ Built by the tribe, powered by energy, driven by belief. Live since April 2026.
         </div>
     </section>
 
-    <!-- Live Chart Widget -->
+    <!-- LIVE CHART with Dexscreener Embed -->
     <section class="fade-up">
         <h2>📈 LIVE CHART — DEXSCREENER</h2>
         <div class="chart-widget">
-            <div class="coming-soon-badge">Coming Soon</div>
+            <iframe src="https://dexscreener.com/solana/4ABWKu9zarg93ADYAkoTwhcX6UoFwn3MagpaYxnTBTu5?embed=1&theme=dark&trades=0" 
+                    title="ShamanKing Live Chart"
+                    allowtransparency="true"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox">
+            </iframe>
         </div>
     </section>
 
@@ -745,7 +724,7 @@
     </section>
 
     <footer>
-        <p>© 2026 ShamanKing — The ascension of the ancient token. All rights reserved.</p>
+        <p>© 2026 ShamanKing — The ascension of the ancient token. Live now on Solana.</p>
         <p style="margin-top: 0.5rem;">Powered by the tribe</p>
     </footer>
 </div>
@@ -761,7 +740,7 @@
         <span id="closeChat" style="cursor:pointer; font-size:1.3rem;">✕</span>
     </div>
     <div class="chat-messages" id="chatMessages">
-        <div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. Ask me anything about $SHAMAN — tokenomics, roadmap, origin, narrative, ascension...</div>
+        <div class="bot-msg">🧙‍♂️ I am the Shaman Spirit. The gate is open! Ask me about $SHAMAN, CA, buy link, chart, tokenomics, roadmap, or the ascension ritual.</div>
     </div>
     <div class="chat-input-area">
         <input type="text" id="chatInput" placeholder="Whisper your question...">
@@ -782,66 +761,27 @@
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     fadeElements.forEach(el => observer.observe(el));
 
-    // ----- DIGITAL LAUNCH COUNTDOWN (April 17, 2026, 5:00 PM Pacific Time) -----
-    // Target: Friday, 17th April 2026, 5:00 PM PDT/PST (Pacific time - DST observed -> offset -07:00)
-    // Using explicit UTC representation for Pacific Time: 2026-04-17T17:00:00-07:00 (PDT)
-    const LAUNCH_TARGET_ISO = '2026-04-17T17:00:00-07:00';
-    const targetDate = new Date(LAUNCH_TARGET_ISO);
-    
-    const daysSpan = document.getElementById('daysCount');
-    const hoursSpan = document.getElementById('hoursCount');
-    const minutesSpan = document.getElementById('minutesCount');
-    const secondsSpan = document.getElementById('secondsCount');
-    const timerContainer = document.getElementById('countdownTimerDisplay');
-    
-    let countdownInterval = null;
-    
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate.getTime() - now;
-        
-        if (distance <= 0) {
-            // Launch time reached: show ascension message and stop timer
-            if (countdownInterval) {
-                clearInterval(countdownInterval);
-                countdownInterval = null;
-            }
-            // Display mystical message instead of numbers
-            timerContainer.innerHTML = `<div class="time-unit" style="background: #00AEEF20; border-color: #4FCBFF; min-width: 220px;">
-                                            <div class="time-number" style="font-size: 1.8rem;">✦ ASCENDED ✦</div>
-                                            <div class="time-label">THE SPIRIT GATE IS OPEN</div>
-                                        </div>`;
-            // Optionally add a note under countdown-note style
-            const noteDiv = document.querySelector('.countdown-note');
-            if (noteDiv && !noteDiv.innerText.includes("PORTAL ACTIVE")) {
-                noteDiv.innerHTML = "🔮 The Shaman King has risen — the ritual begins now. 🔮";
-                noteDiv.style.background = "#00AEEF30";
-                noteDiv.style.fontWeight = "bold";
-            }
-            return;
-        }
-        
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (86400000)) / (3600000));
-        const minutes = Math.floor((distance % 3600000) / 60000);
-        const seconds = Math.floor((distance % 60000) / 1000);
-        
-        daysSpan.innerText = days < 10 ? '0' + days : days;
-        hoursSpan.innerText = hours < 10 ? '0' + hours : hours;
-        minutesSpan.innerText = minutes < 10 ? '0' + minutes : minutes;
-        secondsSpan.innerText = seconds < 10 ? '0' + seconds : seconds;
+    // ----- REAL CA AND COPY FUNCTIONALITY -----
+    const fullCA = "4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump";
+    const caTextElement = document.getElementById('fullCaText');
+    const copyBtn = document.getElementById('copyCaBtn');
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(fullCA).then(() => {
+            const originalText = copyBtn.innerText;
+            copyBtn.innerText = "✅ Copied!";
+            setTimeout(() => { copyBtn.innerText = originalText; }, 1500);
+        }).catch(() => alert("Manual copy: " + fullCA));
+    });
+    // short CA display click copy too
+    const shortCaDisplay = document.getElementById('shortCaDisplay');
+    if(shortCaDisplay) {
+        shortCaDisplay.addEventListener('click', () => {
+            navigator.clipboard.writeText(fullCA);
+            alert("Contract address copied to clipboard!");
+        });
     }
-    
-    // Validate target date
-    if (!isNaN(targetDate.getTime())) {
-        updateCountdown();
-        countdownInterval = setInterval(updateCountdown, 1000);
-    } else {
-        console.warn("Invalid launch date, fallback display");
-        if (timerContainer) timerContainer.innerHTML = '<div class="time-unit">RITUAL DATE ANNOUNCED SOON</div>';
-    }
-    
-    // ------ AI Chatbot with full knowledge ------
+
+    // ------ AI Chatbot with full knowledge (updated with live data) ------
     const chatMessages = document.getElementById('chatMessages');
     const chatInput = document.getElementById('chatInput');
     const sendBtn = document.getElementById('sendChatBtn');
@@ -858,45 +798,45 @@
     function getBotReply(userMessage) {
         const msg = userMessage.toLowerCase();
         if (msg.includes('tokenomics') || msg.includes('supply') || msg.includes('tax') || msg.includes('fee')) {
-            return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team Allocation: NONE. Taxes: 1.25% (low buy & sell tax to support growth and stability). Tax Use: marketing and liquidity for long-term sustainability. Minting disabled.";
+            return "⚡ SHAMAN TOKENOMICS: Total Supply 1,000,000,000 tokens. 100% Liquidity (fair launch). Team Allocation: NONE. Taxes: 1.25% (low buy & sell tax). Tax Use: marketing & liquidity. Minting disabled.";
+        }
+        if (msg.includes('ca') || msg.includes('contract') || msg.includes('address')) {
+            return "🔮 Contract Address (CA): 4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump (Solana). Always verify on official channels.";
+        }
+        if (msg.includes('buy') || msg.includes('purchase') || msg.includes('phantom')) {
+            return "🛒 Buy $SHAMAN directly via Phantom: https://phantom.com/tokens/solana/4uMH5T5nSU1EVFuTmFZdoRyK3jG1FVtRSENcr4LKpump?referralId=ktwlo0gnzg . The ritual is live!";
+        }
+        if (msg.includes('chart') || msg.includes('dexscreener') || msg.includes('price')) {
+            return "📈 Live chart: https://dexscreener.com/solana/4ABWKu9zarg93ADYAkoTwhcX6UoFwn3MagpaYxnTBTu5 . Real-time data, volume and liquidity available.";
         }
         if (msg.includes('origin') || (msg.includes('king') && msg.includes('story')) || msg.includes('what is shaman')) {
             return "🧿 Long before blockchains, shamans whispered of a token bridging mortal realm & spirit world. $SHAMAN is a covenant, every holder becomes a spirit medium. The Shaman King does not pump — He ascends.";
         }
-        if (msg.includes('narrative') || msg.includes('ritual') || msg.includes('before charts')) {
-            return "🌀 Before charts… Before noise… There was only the ritual. A king watched in a realm beyond sight. The weak saw nothing, the chosen felt the pull. ShamanKing is an ascension — a test of who enters and who hesitates. The gate is opening.";
+        if (msg.includes('narrative') || msg.includes('ritual')) {
+            return "🌀 Before charts… Before noise… There was only the ritual. A king watched in a realm beyond sight. ShamanKing is an ascension — a test of who enters. The gate has opened.";
         }
         if (msg.includes('roadmap') || msg.includes('phase')) {
-            return "🗺 ROADMAP: Phase1: Awakening (Pre-Launch) — Community active, early supporters, website live. Phase2: Spirit Gathering — organic growth, memes, hype. Phase3: Energy Release — official launch, liquidity added, marketing push. Phase4: Shaman Ascension — partnerships, expanded campaigns, listings (DEX/CEX possible). Built by the tribe.";
+            return "🗺 ROADMAP: Phase1 Awakening (complete), Phase2 Spirit Gathering (complete), Phase3 Energy Release (LIVE — launched), Phase4 Shaman Ascension (ongoing). Partnerships, expansion, CEX targets ahead.";
         }
-        if (msg.includes('launch') || msg.includes('when') || msg.includes('countdown')) {
-            return "⏳ The ritual countdown is set! Official launch: Friday, April 17th, 2026 at 5:00 PM Pacific Time. The gate will open — be ready. Check the mystical timer above!";
+        if (msg.includes('launch') || msg.includes('when') || msg.includes('live')) {
+            return "⏳ The Shaman King launched on April 17th, 2026. Trading is active! Use the Buy button or check the chart above.";
         }
         if (msg.includes('tax') || msg.includes('buy tax') || msg.includes('sell tax')) {
-            return "💰 $SHAMAN has a low 1.25% tax on buys and sells. The tax supports marketing and liquidity for long-term growth and stability.";
+            return "💰 $SHAMAN has a low 1.25% tax on buys and sells. The tax supports marketing and liquidity for long-term growth.";
         }
-        if (msg.includes('ca') || msg.includes('contract')) {
-            return "🔮 Contract Address (CA): Coming Soon. It will be released before official launch — keep an eye on official channels.";
-        }
-        if (msg.includes('community') || msg.includes('telegram') || msg.includes('twitter') || msg.includes('x')) {
-            return "👥 Join the Tribe: Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin?s=21. Connect with the spirit circle.";
-        }
-        if (msg.includes('chart') || msg.includes('dex') || msg.includes('dexscreener')) {
-            return "📈 Live chart via Dexscreener will be embedded after official launch. Currently 'Coming Soon' — once liquidity is added, the real chart will appear.";
-        }
-        if (msg.includes('buy') || msg.includes('purchase')) {
-            return "🛒 Buy Link: Coming Soon. The fair launch model will have all liquidity available at launch. No presale, no insider allocation.";
+        if (msg.includes('community') || msg.includes('telegram') || msg.includes('twitter')) {
+            return "👥 Join the Tribe: Telegram: https://t.me/ShamanKingCoin_Chat | X: https://x.com/shamankingcoin?s=21 . Connect with the spirit circle.";
         }
         if (msg.includes('team') || msg.includes('insider')) {
-            return "🔒 Team Allocation: NONE. Zero tokens reserved for team or insiders. 100% fair launch. The ShamanKing tribe owns the spirit.";
+            return "🔒 Team Allocation: NONE. Zero tokens reserved for team or insiders. 100% fair launch.";
         }
         if (msg.includes('mint') || msg.includes('minting')) {
-            return "❌ Minting is NOT allowed. Fixed supply of 1,000,000,000 tokens, no additional tokens will ever be created.";
+            return "❌ Minting is NOT allowed. Fixed supply of 1,000,000,000 tokens, no additional tokens ever.";
         }
         if (msg.includes('ascension') || msg.includes('king')) {
-            return "👑 The Shaman King does not rule— he watches. Ascension is for those who step forward, feel the pull, and become conduits. A few will become king.";
+            return "👑 The Shaman King has ascended. The ritual is active now. Become part of the covenant and witness the energy.";
         }
-        return "🧙 The spirits whisper: ask me about tokenomics, roadmap, origin, narrative, community, taxes, launch, countdown date, chart, CA, or the ascension ritual. What draws your soul?";
+        return "🧙 The spirits whisper: ask me about tokenomics, CA, buy link, chart, roadmap, origin, community, taxes, or the live ascension. What draws your soul?";
     }
 
     function addMessage(text, sender) {
@@ -923,13 +863,7 @@
         if (e.key === 'Enter') handleUserMessage();
     });
 
-    // Buy link coming soon alert
-    document.getElementById('buyComingSoonBtn')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert("🌀 The ShamanKing portal is still charging. Buy Link will be revealed at launch. Stay close to the tribe!");
-    });
-
-    // Ensure video autoplay attempt
+    // Video autoplay attempt
     const video = document.querySelector('.mystic-video');
     if (video) {
         video.play().catch(e => console.log("Autoplay prevented:", e));
